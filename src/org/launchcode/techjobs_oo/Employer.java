@@ -26,10 +26,10 @@ public class Employer {
     }
 
     @Override
-    public boolean equals(Object o) {  // Two objects are equal if they have the same id.
-        if (this == o) return true;
-        if (!(o instanceof Employer)) return false;
-        Employer employer = (Employer) o;
+    public boolean equals(Object e) {  // Two objects are equal if they have the same id.
+        if (this == e) return true;
+        if (!(e instanceof Employer)) return false;
+        Employer employer = (Employer) e;
         return getId() == employer.getId();
     }
 

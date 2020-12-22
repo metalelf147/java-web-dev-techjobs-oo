@@ -7,11 +7,11 @@ public class Job {
     private int id;
     private static int nextId = 1;
 
-    private String name;
-    private Employer employer;
-    private Location location;
-    private PositionType positionType;
-    private CoreCompetency coreCompetency;
+    private static String name;
+    private static Employer employer;
+    private static Location location;
+    private static PositionType positionType;
+    private static CoreCompetency coreCompetency;
 
     public Job() {
         id = nextId;
@@ -26,6 +26,12 @@ public class Job {
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
     }
+
+//    public static String coreCompetency() {
+//        return coreCompetency();
+//    }
+
+
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
@@ -52,7 +58,7 @@ public class Job {
         return id;
     }
 
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
@@ -60,7 +66,7 @@ public class Job {
         this.name = name;
     }
 
-    public Employer getEmployer() {
+    public static Employer getEmployer() {
         return employer;
     }
 
@@ -68,7 +74,7 @@ public class Job {
         this.employer = employer;
     }
 
-    public Location getLocation() {
+    public static Location getLocation() {
         return location;
     }
 
@@ -76,7 +82,7 @@ public class Job {
         this.location = location;
     }
 
-    public PositionType getPositionType() {
+    public static PositionType getPositionType() {
         return positionType;
     }
 

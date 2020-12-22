@@ -1,27 +1,42 @@
-//package org.launchcode.techjobs_oo.Tests;
-//import org.junit.Test;
-//import org.junit.Before;
-//import org.launchcode.techjobs_oo.Job;
-//import org.junit.Assert;
-//import org.junit.After;
-//import static org.junit.Assert.assertTrue;
+package org.launchcode.techjobs_oo.Tests;
+import org.launchcode.techjobs_oo.Job;
+import org.junit.Before;
+import org.junit.Test;
+import org.launchcode.techjobs_oo.*;
+import org.junit.Assert;
+import org.junit.After;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+
+
+public class JobTest {
 //
-//
-//
-//public class JobTest {
-//
-////    @Before
-////    public void createJobObject() {
-////        Job j1 = new Job();
-////        Job j2 = new Job();
-////    }
-//
-//    @Test
-//    public void testSettingJobId() {
-//        Job j1 = new Job();
-//        Job j2 = new Job();
-//        assertTrue(j1.getId() != j2.id);
-//    }
+//    Job job1;
+//    Job job2;
+//    Job job3;
+
+    @Before
+    public void makeJobs(){
+        Job job1 = new Job();
+        Job job2 = new Job();
+        Job job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+    }
+
+    @Test
+    public void testSettingJobId() {
+        assertTrue(job1.getId() != job2.getId());
+    }
+
+    @Test
+    public void testJobConstructorSetsAllFields(){
+        assertEquals("Product tester", job3.getName());
+        assertEquals("ACME", job3.getEmployer());
+//        assertEquals("Desert", job3.getLocation());
+//        assertEquals("Quality control", job3.getPositionType());
+//        assertEquals("Persistence", job3.coreCompetency());
+    }
+}
 //
 //
 ////    Use assertEquals, assertTrue, or assertFalse to test that the ID values for the
