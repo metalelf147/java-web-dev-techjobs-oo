@@ -11,31 +11,49 @@ import static org.junit.Assert.assertTrue;
 
 
 public class JobTest {
-//
-//    Job job1;
-//    Job job2;
-//    Job job3;
+
+    Job job1;
+    Job job2;
+    Job job3;
+    Job job4;
+    Job job5;
 
     @Before
-    public void makeJobs(){
-        Job job1 = new Job();
-        Job job2 = new Job();
-        Job job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+    public void makeTestJobs(){
+        job1 = new Job();
+        job2 = new Job();
+        job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        job4 = new Job("Cat cafe owner", new Employer ("CATSLIVING"), new Location ("Mountains"), new PositionType("Care for cats"), new CoreCompetency("Patience"));
+        job5 = new Job("Cat cafe owner", new Employer ("CATSLIVING"), new Location ("Mountains"), new PositionType("Care for cats"), new CoreCompetency("Patience"));
     }
 
     @Test
     public void testSettingJobId() {
         assertTrue(job1.getId() != job2.getId());
+
+    }
+
+    @Test
+    public void testIfInstanceOfJob() {
+        assertEquals(true, job3 instanceof Job);
     }
 
     @Test
     public void testJobConstructorSetsAllFields(){
         assertEquals("Product tester", job3.getName());
-        assertEquals("ACME", job3.getEmployer());
-//        assertEquals("Desert", job3.getLocation());
-//        assertEquals("Quality control", job3.getPositionType());
-//        assertEquals("Persistence", job3.coreCompetency());
+        assertEquals("ACME", job3.getEmployer().getValue());
+        assertEquals("Desert", job3.getLocation().getValue());
+        assertEquals("Quality control", job3.getPositionType().getValue());
+        assertEquals("Persistence", job3.getCoreCompetency().getValue());
     }
+
+    @Test
+    public void testJobsForEquality(){
+        assertEquals(job4.getId(), job5.getId());
+    }
+
+
+
 }
 //
 //
