@@ -29,11 +29,11 @@ public class JobTest {
 
     }
 
-//    @Test
-//    public void testSettingJobId() {
-//        assertTrue(job1.getId() != job2.getId());
-//
-//    }
+    @Test
+    public void testSettingJobId() {
+        assertTrue(job1.getId() != job2.getId());
+
+    }
 
     @Test
     public void testIfInstanceOfJob() {

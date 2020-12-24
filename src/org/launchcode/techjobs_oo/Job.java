@@ -30,19 +30,6 @@ public class Job {
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 //
-    @Override
-    public boolean equals(Object j) {
-        if (this == j) return true;
-        if (!(j instanceof Job)) return false;
-        Job job = (Job) j;
-        return getId() == job.getId();
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(getId());
-    }
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
@@ -92,20 +79,35 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
+    @Override
+    public boolean equals(Object j) {
+        if (this == j) return true;
+        if (!(j instanceof Job)) return false;
+        Job job = (Job) j;
+        return getId() == job.getId();
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(getId());
+    }
+
+    @Override
     public String toString() {
         if (this.name == null || this.name.isEmpty()) {
             return "ID: " + id + " \n" + "Name: Data not available" + " \n" + "Employer: " + employer + " \n" + "Location: " + location + " \n" + "Position type: " + positionType + " \n" + "Core competency: " + coreCompetency + " \n";
         }
-        if (this.employer == null) {
+        if (this.employer == null || this.employer.getValue() == "") {
             return "ID: " + id + " \n" + "Name: " + name + " \n" + "Employer: Data not available" + " \n" + "Location: " + location + " \n" + "Position type: " + positionType + " \n" + "Core competency: " + coreCompetency + " \n";
         }
-        if (this.location == null) {
+        if (this.location == null || this.location.getValue() == "") {
             return "ID: " + id + " \n" + "Name: " + name + " \n" + "Employer: " + employer + " \n" + "Location: Data not available" + " \n" + "Position type: " + positionType + " \n" + "Core competency: " + coreCompetency + " \n";
         }
-        if (this.positionType == null) {
+        if (this.positionType == null || this.positionType.getValue() == "") {
             return "ID: " + id + " \n" + "Name: " + name + " \n" + "Employer: " + employer + " \n" + "Location: " + location + " \n" + "Position type: Data not available" + " \n" + "Core competency: " + coreCompetency + " \n";
         }
-        if (this.coreCompetency == null) {
+        if (this.coreCompetency == null || this.coreCompetency.getValue() == "") {
             return "ID: " + id + " \n" + "Name: " + name + " \n" + "Employer: " + employer + " \n" + "Location: " + location + " \n" + "Position type: " + positionType + " \n" + "Core competency: Data not available" + " \n";
         } else {
             return "ID: " + id + " \n" + "Name: " + name + " \n" + "Employer: " + employer + " \n" + "Location: " + location + " \n" + "Position type: " + positionType + " \n" + "Core competency: " + coreCompetency + " \n";
