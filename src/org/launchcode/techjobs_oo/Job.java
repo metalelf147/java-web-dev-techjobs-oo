@@ -7,18 +7,18 @@ public class Job {
     private int id;
     private static int nextId = 1;
 
-    private static String name;
-    private static Employer employer;
-    private static Location location;
-    private static PositionType positionType;
-    private static CoreCompetency coreCompetency;
+    private String name;
+    private Employer employer;
+    private Location location;
+    private PositionType positionType;
+    private CoreCompetency coreCompetency;
 
     public Job() {
         id = nextId;
         nextId++;
     }
 
-    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency){
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this();
         this.name = name;
         this.employer = employer;
@@ -26,11 +26,6 @@ public class Job {
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
     }
-
-
-//    public static String coreCompetency() {
-//
-//    }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
@@ -57,7 +52,7 @@ public class Job {
         return id;
     }
 
-    public static String getName() {
+    public String getName() {
         return name;
     }
 
@@ -65,7 +60,7 @@ public class Job {
         this.name = name;
     }
 
-    public static Employer getEmployer() {
+    public Employer getEmployer() {
         return employer;
     }
 
@@ -73,7 +68,7 @@ public class Job {
         this.employer = employer;
     }
 
-    public static Location getLocation() {
+    public Location getLocation() {
         return location;
     }
 
@@ -81,7 +76,7 @@ public class Job {
         this.location = location;
     }
 
-    public static PositionType getPositionType() {
+    public PositionType getPositionType() {
         return positionType;
     }
 
@@ -95,5 +90,25 @@ public class Job {
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
+    }
+
+    public String toString() {
+        if (this.name == null || this.name.isEmpty()) {
+            return "ID: " + id + " \n" + "Name: Data not available" + " \n" + "Employer: " + employer + " \n" + "Location: " + location + " \n" + "Position type: " + positionType + " \n" + "Core competency: " + coreCompetency + " \n";
+        }
+        if (this.employer == null) {
+            return "ID: " + id + " \n" + "Name: " + name + " \n" + "Employer: Data not available" + " \n" + "Location: " + location + " \n" + "Position type: " + positionType + " \n" + "Core competency: " + coreCompetency + " \n";
+        }
+        if (this.location == null) {
+            return "ID: " + id + " \n" + "Name: " + name + " \n" + "Employer: " + employer + " \n" + "Location: Data not available" + " \n" + "Position type: " + positionType + " \n" + "Core competency: " + coreCompetency + " \n";
+        }
+        if (this.positionType == null) {
+            return "ID: " + id + " \n" + "Name: " + name + " \n" + "Employer: " + employer + " \n" + "Location: " + location + " \n" + "Position type: Data not available" + " \n" + "Core competency: " + coreCompetency + " \n";
+        }
+        if (this.coreCompetency == null) {
+            return "ID: " + id + " \n" + "Name: " + name + " \n" + "Employer: " + employer + " \n" + "Location: " + location + " \n" + "Position type: " + positionType + " \n" + "Core competency: Data not available" + " \n";
+        } else {
+            return "ID: " + id + " \n" + "Name: " + name + " \n" + "Employer: " + employer + " \n" + "Location: " + location + " \n" + "Position type: " + positionType + " \n" + "Core competency: " + coreCompetency + " \n";
+        }
     }
 }
